@@ -4,7 +4,7 @@ Reflix is a movie rental app. It allows a user to browse a catalog of movies, an
 
 ## Technologies
 
-Basic React components, using router libary.
+Basic React components, using router library.
 
 ## Screenshot
 
