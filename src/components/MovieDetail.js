@@ -1,12 +1,11 @@
-import React, { Component } from "react";
-import "../css/movie-detail.css";
-// import { useParams } from "react-router-dom";
+import React, { Component } from 'react';
+import '../css/movie-detail.css';
 
 class MovieDetail extends Component {
   render() {
-    // const { current } = useParams();
+    const movieID = this.props.match.params.movieID;
     let movie = this.props.movies.find((m) => {
-      return m.id === "1";
+      return m.id === movieID;
     });
 
     return (

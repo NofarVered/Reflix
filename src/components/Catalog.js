@@ -1,27 +1,18 @@
-import React, { Component } from "react";
-import "../css/catalog.css";
-import Movie from "./Movie";
+import React, { Component } from 'react';
+import Movie from './Movie';
+import AllMovies from './AllMovies';
+import '../css/catalog.css';
 
-const AllMovies = function (props) {
-  return (
-    <div>
-      <p>Catalog:</p>
-      <div className="display all">
-        {props.movies.map((m) => props.getMovieDisplay(m))}
-      </div>
-    </div>
-  );
-};
 class Catalog extends Component {
   constructor() {
     super();
     this.state = {
-      budget: JSON.parse(localStorage["budget"] || 10),
+      budget: JSON.parse(localStorage['budget'] || 10),
     };
   }
 
   componentDidMount = () =>
-    (localStorage["budget"] = JSON.stringify(this.state.budget));
+    (localStorage['budget'] = JSON.stringify(this.state.budget));
 
   getMovieDisplay = (movie, rented = false) => {
     return (
