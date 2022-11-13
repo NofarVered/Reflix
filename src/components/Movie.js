@@ -1,5 +1,6 @@
-import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import { BiPlusCircle, BiMinusCircle } from 'react-icons/bi';
 
 class Movie extends Component {
   toggleRented = () => {
@@ -7,7 +8,7 @@ class Movie extends Component {
     let currentBudget = this.props.budget;
 
     if (currentBudget + amount < 0) {
-      return alert("Insufficient Funds");
+      return alert('Insufficient Funds');
     }
 
     this.props.updateBudget(amount);
@@ -26,9 +27,9 @@ class Movie extends Component {
 
         <p>{movie.title}</p>
         {movie.isRented ? (
-          <i onClick={this.toggleRented} className="fas fa-minus-circle"></i>
+          <BiMinusCircle onClick={this.toggleRented} />
         ) : (
-          <i onClick={this.toggleRented} className="fas fa-plus-circle"></i>
+          <BiPlusCircle onClick={this.toggleRented} />
         )}
       </div>
     );
