@@ -61,7 +61,7 @@ class App extends Component {
     };
   }
 
-  componentDidMount = () => localStorage.removeItem('budget');
+  componentWillMount = () => localStorage.removeItem('budget');
 
   toggleRented = (movieId) => {
     let index = this.state.movies.findIndex((m) => {
