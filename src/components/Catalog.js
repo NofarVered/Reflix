@@ -11,9 +11,6 @@ class Catalog extends Component {
     };
   }
 
-  componentDidMount = () =>
-    (localStorage['budget'] = JSON.stringify(this.state.budget));
-
   getMovieDisplay = (movie, rented = false) => {
     return (
       <Movie
@@ -32,6 +29,7 @@ class Catalog extends Component {
       ...this.state,
       budget: this.state.budget + amount,
     });
+    localStorage['budget'] = JSON.stringify(this.state.budget);
   };
 
   getDisplayMovies = () => {
